@@ -1,40 +1,22 @@
 @extends('app')
 
+@section('meta')
+  <meta property="og:image" content="" />
+@endsection
+
 @section('content')
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-              </button>
-              <a class="navbar-brand page-scroll" href="#page-top">{{env("WEB_NAME")}}</a>
-          </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a class="page-scroll" href="#intro">大學介紹</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#features">探索學院</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#contact">我是哪個學院?</a>
-                  </li>
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-  </nav>
-
+  @include('menu', [
+    "list" => [
+      "intro" => "大學介紹",
+      "features" => "探索學院"
+    ]
+  ])
 
   <header>
+		<div class="bg"></div>
       <div class="container">
           <div class="row">
-
               <div class="col-sm-12 text-center">
                   <div class="section-heading header-content">
                     <div class="header-content-inner">
@@ -48,23 +30,6 @@
                     </div>
                   </div>
               </div>
-{{--
-              <div class="col-sm-5">
-                  <div class="device-container">
-                      <div class="device-mockup iphone6_plus portrait white">
-                          <div class="device">
-                              <div class="screen">
-                                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                  <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
-                              </div>
-                              <div class="button">
-                                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-               --}}
           </div>
       </div>
   </header>
@@ -75,9 +40,7 @@
             <div class="col-lg-12 text-center">
                 <div class="section-heading">
                     <h2>大學介紹</h2>
-                    <p>
-                      觸手可及而永垂不朽的經典
-                    </p>
+                    <p>觸手可及而永垂不朽的經典</p>
                     <hr>
                 </div>
             </div>
@@ -112,7 +75,7 @@
                   <div class="section-heading">
                       <h2>探索學院</h2>
                       <p class="text-muted">
-                        Check out what you can do with this app theme!
+                        遍地全臺各俱特色的九大學院
                       </p>
                       <hr>
                   </div>
@@ -124,69 +87,96 @@
                       <div class="row">
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon-screen-smartphone text-primary"></i>
-                                  <h3>Device Mockups</h3>
-                                  <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                                  <i class="icon rice"></i>
+                                  <h3>飯學院</h3>
+                                  <p class="text-muted">
+                                    橫跨東方民族，可以自由地與任何料理搭配，只要看得到人，就看得到它。
+                                  </p>
+                                  <a href="{{url("rice")}}" class="btn btn-success">參觀飯學院</a>
                               </div>
                           </div>
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon-camera text-primary"></i>
-                                  <h3>Flexible Use</h3>
-                                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                                  <i class="icon tofu"></i>
+                                  <h3>豆腐學院</h3>
+                                  <p class="text-muted">
+                                    黃豆編織而成的美麗衣裳，料理方式也是變化萬千，不管是湯或小菜都有它。
+                                  </p>
+                                  <a href="{{url("tofu")}}" class="btn btn-success">參觀豆腐學院</a>
                               </div>
                           </div>
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon-camera text-primary"></i>
-                                  <h3>Flexible Use</h3>
-                                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-4">
-                              <div class="feature-item">
-                                  <i class="icon-present text-primary"></i>
-                                  <h3>Free to Use</h3>
-                                  <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                              </div>
-                          </div>
-                          <div class="col-md-4">
-                              <div class="feature-item">
-                                  <i class="icon-lock-open text-primary"></i>
-                                  <h3>Open Source</h3>
-                                  <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                              </div>
-                          </div>
-                          <div class="col-md-4">
-                              <div class="feature-item">
-                                  <i class="icon-present text-primary"></i>
-                                  <h3>Free to Use</h3>
-                                  <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
+                                  <i class="icon chicken"></i>
+                                  <h3>鹹酥雞學院</h3>
+                                  <p class="text-muted">
+                                    出沒夜市攤販小吃裡的香雞，路過經過你的鼻子不會錯過。
+                                  </p>
+                                  <a href="{{url("chicken")}}" class="btn btn-success">參觀鹹酥雞學院</a>
                               </div>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon-screen-smartphone text-primary"></i>
-                                  <h3>Device Mockups</h3>
-                                  <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                                  <i class="icon noodles"></i>
+                                  <h3>麵線學院</h3>
+                                  <p class="text-muted">
+                                    九天玄女指點創制的長壽麵，金梭玉帛、牽絲如縷，簡直巧奪天工。
+                                  </p>
+                                  <a href="{{url("noodles")}}" class="btn btn-success">參觀麵線學院</a>
                               </div>
                           </div>
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon-camera text-primary"></i>
-                                  <h3>Flexible Use</h3>
-                                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                                  <i class="icon oysters"></i>
+                                  <h3>蚵仔學院</h3>
+                                  <p class="text-muted">
+                                    淡水海水交界處，它躲在岸石下安靜醞釀著深不可測的大海甘甜。
+                                  </p>
+                                  <a href="{{url("oysters")}}" class="btn btn-success">參觀蚵仔學院</a>
                               </div>
                           </div>
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon-camera text-primary"></i>
-                                  <h3>Flexible Use</h3>
-                                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                                  <i class="icon beef"></i>
+                                  <h3>牛肉學院</h3>
+                                  <p class="text-muted">
+                                    所有美味集結在一碗，札實、肥美、飽滿三種享受一次滿足。
+                                  </p>
+                                  <a href="{{url("beef")}}" class="btn btn-success">參觀牛肉學院</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="feature-item">
+                                  <i class="icon squid"></i>
+                                  <h3>羹學院</h3>
+                                  <p class="text-muted">
+                                    似湯非湯的料理，與海產完美結合，滑順又飛快的滋味滿足心頭！
+                                  </p>
+                                  <a href="{{url("squid")}}" class="btn btn-success">參觀羹學院</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="feature-item">
+                                  <i class="icon staple"></i>
+                                  <h3>名產學院</h3>
+                                  <p class="text-muted">
+                                    出門旅行除了玩，更要留下在地才有的東西，買的是名產，送的是誠意。
+                                  </p>
+                                  <a href="{{url("staple")}}" class="btn btn-success">參觀名產學院</a>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="feature-item">
+                                  <i class="icon pearl"></i>
+                                  <h3>珍珠學院</h3>
+                                  <p class="text-muted">
+                                    飲品類無人不知的珍珠，不只紅遍台灣，更是揚名國際，人手幾乎一杯！
+                                  </p>
+                                  <a href="{{url("pearl")}}" class="btn btn-success">參觀珍珠學院</a>
                               </div>
                           </div>
                       </div>
@@ -194,50 +184,5 @@
               </div>
           </div>
   </section>
-
-  <section class="cta">
-      <div class="cta-content">
-          <div class="container">
-              <h2>Stop waiting.<br>Start building.</h2>
-              <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
-          </div>
-      </div>
-      <div class="overlay"></div>
-  </section>
-
-  <section id="contact" class="contact bg-primary">
-      <div class="container">
-          <h2>我是哪個學院?</h2>
-          <ul class="list-inline list-social">
-              <li class="social-twitter">
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li class="social-facebook">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-              </li>
-              <li class="social-google-plus">
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-              </li>
-          </ul>
-      </div>
-  </section>
-
-  <footer>
-      <div class="container">
-          <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
-          <ul class="list-inline">
-              <li>
-                  <a href="#">Privacy</a>
-              </li>
-              <li>
-                  <a href="#">Terms</a>
-              </li>
-              <li>
-                  <a href="#">FAQ</a>
-              </li>
-          </ul>
-      </div>
-  </footer>
-
 
 @endsection

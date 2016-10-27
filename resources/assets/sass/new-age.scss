@@ -12,6 +12,10 @@ body {
     @include body-font;
 }
 
+p{
+  font-weight: 200;
+}
+
 a {
     @include transition-all;
     color: $theme-primary;
@@ -137,10 +141,21 @@ header {
     width: 100%;
     min-height: auto;
     overflow-y: hidden;
-    background: url("../img/bg-pattern.png"), $theme-secondary; /* fallback for old browsers */
-    background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, $theme-secondary , $theme-tertiary); /* Chrome 10-25, Safari 5.1-6 */
-    background: url("../img/bg-pattern.png"), linear-gradient(to left, $theme-secondary , $theme-tertiary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: $theme-secondary; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, $theme-secondary , $theme-tertiary); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, $theme-secondary , $theme-tertiary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
+    .bg{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: .25;
+      background-image: url(http://c3.staticflickr.com/9/8118/29482477786_e80ac3be35_k.jpg);
+    }
     .header-content {
         text-align: center;
         padding: 150px 0 50px;
@@ -164,6 +179,12 @@ header {
             }
             .btn{
               margin-top: 30px;
+            }
+            .text-muted{
+              color: #ccc;
+            }
+            hr {
+              border-color: #aaa;
             }
         }
     }
@@ -203,6 +224,42 @@ header {
             font-size: 50px;
         }
     }
+
+    .icon{
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      background-color: white;
+    }
+
+    .rice{
+      mask: url(/images/rice.svg) no-repeat 50% 50%;
+    }
+    .tofu{
+      mask: url(/images/tofu.svg) no-repeat 50% 50%;
+    }
+    .chicken{
+      mask: url(/images/chicken.svg) no-repeat 50% 50%;
+    }
+    .noodles{
+      mask: url(/images/noodles.svg) no-repeat 50% 50%;
+    }
+    .oysters{
+      mask: url(/images/oysters.svg) no-repeat 50% 50%;
+    }
+    .beef{
+      mask: url(/images/beef.svg) no-repeat 50% 50%;
+    }
+    .squid{
+      mask: url(/images/squid.svg) no-repeat 50% 50%;
+    }
+    .staple{
+      mask: url(/images/staple.svg) no-repeat 50% 50%;
+    }
+    .pearl{
+      mask: url(/images/pearl.svg) no-repeat 50% 50%;
+    }
+
 }
 
 // Sections
@@ -232,6 +289,7 @@ section.intro {
     }
     p.text{
       text-align: left;
+      line-height: 35px;
     }
     @media(min-width: 768px) {
         h2 {
@@ -268,11 +326,24 @@ section.features {
             font-size: 30px;
         }
         i {
-            font-size: 80px;
-              background: -webkit-linear-gradient(to left, $theme-secondary , $theme-tertiary);
-              background: linear-gradient(to left, $theme-secondary , $theme-tertiary);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 80px;
+            height: 83px;
+            display: inline-block;
+            &.rice{ background-image:    url(/images/rice.svg); }
+            &.tofu{ background-image:    url(/images/tofu.svg); }
+            &.chicken{ background-image: url(/images/chicken.svg); }
+            &.noodles{ background-image: url(/images/noodles.svg); }
+            &.oysters{ background-image: url(/images/oysters.svg); }
+            &.beef{ background-image:    url(/images/beef.svg); }
+            &.squid{ background-image:   url(/images/squid.svg); }
+            &.staple{ background-image:  url(/images/staple.svg); }
+            &.pearl{ background-image:   url(/images/pearl.svg); }
+        }
+        .text-muted{
+          text-align: left;
         }
     }
     @media(min-width: 992px) {
@@ -315,7 +386,7 @@ section.cta {
     }
 }
 
-section.contact {
+section.which-college {
     text-align: center;
     h2 {
         margin-top: 0;
@@ -323,44 +394,63 @@ section.contact {
         i {
             color: $brand-google-plus;
         }
+        &:after{
+          margin-top: 20px;
+          content: "找出最適合您的學院";
+          font-size: .4em;
+          display: block;
+        }
     }
     ul.list-social {
         margin-bottom: 0;
         li {
+          position: relative;
+          &:before{
+            content: attr(data-text);
+            display: block;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 0px;
+            transform: translateX(-50%);
+            width: 120px;
+            transition: all .2s;
+          }
+          &:hover{
+            a{
+              transform: scale(1.1);
+              background-color: lighten($theme-primary, 20%);
+            }
+            &:before{
+              opacity: 1;
+              top: -10px;
+            }
+          }
             a {
-                display: block;
-                height: 80px;
-                width: 80px;
-                line-height: 80px;
-                font-size: 40px;
-                border-radius: 100%;
-                color: white;
+              display: block;
+              height: 80px;
+              width: 80px;
+              line-height: 80px;
+              font-size: 40px;
+              border-radius: 100%;
+              color: white;
+              background-position: center;
+              background-color: white;
+              position: relative;
             }
-            &.social-twitter {
-                a {
-                    background-color: $brand-twitter;
-                    &:hover {
-                        background-color: darken($brand-twitter, 5%);
-                    }
-                }
-            }
-            &.social-facebook {
-                a {
-                    background-color: $brand-facebook;
-                    &:hover {
-                        background-color: darken($brand-facebook, 5%);
-                    }
-                }
-            }
-            &.social-google-plus {
-                a {
-                    background-color: $brand-google-plus;
-                    &:hover {
-                        background-color: darken($brand-google-plus, 5%);
-                    }
-                }
-            }
+            &.rice a{ mask: url(/images/rice.svg) no-repeat 50% 50%; }
+            &.tofu a{ mask: url(/images/tofu.svg) no-repeat 50% 50%; }
+            &.chicken a{ mask: url(/images/chicken.svg) no-repeat 50% 50%; }
+            &.noodles a{ mask: url(/images/noodles.svg) no-repeat 50% 50%; }
+            &.oysters a{ mask: url(/images/oysters.svg) no-repeat 50% 50%; }
+            &.beef a{ mask: url(/images/beef.svg) no-repeat 50% 50%; }
+            &.squid a{ mask: url(/images/squid.svg) no-repeat 50% 50%; }
+            &.staple a{ mask: url(/images/staple.svg) no-repeat 50% 50%; }
+            &.pearl a{ mask: url(/images/pearl.svg) no-repeat 50% 50%; }
         }
+    }
+    .btn-fb{
+      margin-top: 30px;
     }
 }
 

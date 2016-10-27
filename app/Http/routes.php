@@ -12,3 +12,13 @@
 */
 
 Route::get('/', "MainController@index");
+
+Route::get('rice',    "MainController@rice");
+Route::get('tofu',    "MainController@tofu");
+Route::get('chicken', "MainController@chicken");
+Route::get('noodles', "MainController@noodles");
+Route::get('oysters', "MainController@oysters");
+Route::get('beef',    "MainController@beef");
+Route::get('squid',   "MainController@squid");
+Route::get('staple',  "MainController@staple");
+Route::get('pearl',   "MainController@pearl");

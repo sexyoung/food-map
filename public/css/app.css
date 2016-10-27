@@ -5738,6 +5738,9 @@ body {
 body {
   font-family: 'Noto Sans TC', 'Muli', 'Helvetica', 'Arial', 'sans-serif'; }
 
+p {
+  font-weight: 200; }
+
 a {
   transition: all 0.35s;
   color: #daae7b; }
@@ -5837,12 +5840,22 @@ header {
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
-  background: url("../img/bg-pattern.png"), #333;
+  background: #333;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #333, #333);
+  background: linear-gradient(to left, #333, #333);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white; }
+  header .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: .25;
+    background-image: url(http://c3.staticflickr.com/9/8118/29482477786_e80ac3be35_k.jpg); }
   header .header-content {
     text-align: center;
     padding: 150px 0 50px;
@@ -5863,6 +5876,10 @@ header {
           margin-bottom: 25px; }
       header .header-content .header-content-inner .btn {
         margin-top: 30px; }
+      header .header-content .header-content-inner .text-muted {
+        color: #ccc; }
+      header .header-content .header-content-inner hr {
+        border-color: #aaa; }
   header .device-container {
     max-width: 300px;
     margin: 0 auto 100px; }
@@ -5891,6 +5908,38 @@ header {
   @media (min-width: 992px) {
     header .header-content .header-content-inner h1 {
       font-size: 50px; } }
+  header .icon {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: white; }
+  header .rice {
+    -webkit-mask: url(/images/rice.svg) no-repeat 50% 50%;
+    mask: url(/images/rice.svg) no-repeat 50% 50%; }
+  header .tofu {
+    -webkit-mask: url(/images/tofu.svg) no-repeat 50% 50%;
+    mask: url(/images/tofu.svg) no-repeat 50% 50%; }
+  header .chicken {
+    -webkit-mask: url(/images/chicken.svg) no-repeat 50% 50%;
+    mask: url(/images/chicken.svg) no-repeat 50% 50%; }
+  header .noodles {
+    -webkit-mask: url(/images/noodles.svg) no-repeat 50% 50%;
+    mask: url(/images/noodles.svg) no-repeat 50% 50%; }
+  header .oysters {
+    -webkit-mask: url(/images/oysters.svg) no-repeat 50% 50%;
+    mask: url(/images/oysters.svg) no-repeat 50% 50%; }
+  header .beef {
+    -webkit-mask: url(/images/beef.svg) no-repeat 50% 50%;
+    mask: url(/images/beef.svg) no-repeat 50% 50%; }
+  header .squid {
+    -webkit-mask: url(/images/squid.svg) no-repeat 50% 50%;
+    mask: url(/images/squid.svg) no-repeat 50% 50%; }
+  header .staple {
+    -webkit-mask: url(/images/staple.svg) no-repeat 50% 50%;
+    mask: url(/images/staple.svg) no-repeat 50% 50%; }
+  header .pearl {
+    -webkit-mask: url(/images/pearl.svg) no-repeat 50% 50%;
+    mask: url(/images/pearl.svg) no-repeat 50% 50%; }
 
 section {
   padding: 100px 0; }
@@ -5909,7 +5958,8 @@ section.intro {
   section.intro .text-primary {
     font-size: 50px; }
   section.intro p.text {
-    text-align: left; }
+    text-align: left;
+    line-height: 35px; }
   @media (min-width: 768px) {
     section.intro h2 {
       font-size: 50px; } }
@@ -5938,10 +5988,32 @@ section.features .feature-item {
   section.features .feature-item h3 {
     font-size: 30px; }
   section.features .feature-item i {
-    font-size: 80px;
-    background: linear-gradient(to left, #333, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 83px;
+    display: inline-block; }
+    section.features .feature-item i.rice {
+      background-image: url(/images/rice.svg); }
+    section.features .feature-item i.tofu {
+      background-image: url(/images/tofu.svg); }
+    section.features .feature-item i.chicken {
+      background-image: url(/images/chicken.svg); }
+    section.features .feature-item i.noodles {
+      background-image: url(/images/noodles.svg); }
+    section.features .feature-item i.oysters {
+      background-image: url(/images/oysters.svg); }
+    section.features .feature-item i.beef {
+      background-image: url(/images/beef.svg); }
+    section.features .feature-item i.squid {
+      background-image: url(/images/squid.svg); }
+    section.features .feature-item i.staple {
+      background-image: url(/images/staple.svg); }
+    section.features .feature-item i.pearl {
+      background-image: url(/images/pearl.svg); }
+  section.features .feature-item .text-muted {
+    text-align: left; }
 
 @media (min-width: 992px) {
   section.features .device-container,
@@ -5975,35 +6047,78 @@ section.cta {
     top: 0;
     left: 0; }
 
-section.contact {
+section.which-college {
   text-align: center; }
-  section.contact h2 {
+  section.which-college h2 {
     margin-top: 0;
     margin-bottom: 25px; }
-    section.contact h2 i {
+    section.which-college h2 i {
       color: #dd4b39; }
-  section.contact ul.list-social {
+    section.which-college h2:after {
+      margin-top: 20px;
+      content: "找出最適合您的學院";
+      font-size: .4em;
+      display: block; }
+  section.which-college ul.list-social {
     margin-bottom: 0; }
-    section.contact ul.list-social li a {
-      display: block;
-      height: 80px;
-      width: 80px;
-      line-height: 80px;
-      font-size: 40px;
-      border-radius: 100%;
-      color: white; }
-    section.contact ul.list-social li.social-twitter a {
-      background-color: #1da1f2; }
-      section.contact ul.list-social li.social-twitter a:hover {
-        background-color: #0d95e8; }
-    section.contact ul.list-social li.social-facebook a {
-      background-color: #3b5998; }
-      section.contact ul.list-social li.social-facebook a:hover {
-        background-color: #344e86; }
-    section.contact ul.list-social li.social-google-plus a {
-      background-color: #dd4b39; }
-      section.contact ul.list-social li.social-google-plus a:hover {
-        background-color: #d73925; }
+    section.which-college ul.list-social li {
+      position: relative; }
+      section.which-college ul.list-social li:before {
+        content: attr(data-text);
+        display: block;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        transform: translateX(-50%);
+        width: 120px;
+        transition: all .2s; }
+      section.which-college ul.list-social li:hover a {
+        transform: scale(1.1);
+        background-color: #f0dfcb; }
+      section.which-college ul.list-social li:hover:before {
+        opacity: 1;
+        top: -10px; }
+      section.which-college ul.list-social li a {
+        display: block;
+        height: 80px;
+        width: 80px;
+        line-height: 80px;
+        font-size: 40px;
+        border-radius: 100%;
+        color: white;
+        background-position: center;
+        background-color: white;
+        position: relative; }
+      section.which-college ul.list-social li.rice a {
+        -webkit-mask: url(/images/rice.svg) no-repeat 50% 50%;
+        mask: url(/images/rice.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.tofu a {
+        -webkit-mask: url(/images/tofu.svg) no-repeat 50% 50%;
+        mask: url(/images/tofu.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.chicken a {
+        -webkit-mask: url(/images/chicken.svg) no-repeat 50% 50%;
+        mask: url(/images/chicken.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.noodles a {
+        -webkit-mask: url(/images/noodles.svg) no-repeat 50% 50%;
+        mask: url(/images/noodles.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.oysters a {
+        -webkit-mask: url(/images/oysters.svg) no-repeat 50% 50%;
+        mask: url(/images/oysters.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.beef a {
+        -webkit-mask: url(/images/beef.svg) no-repeat 50% 50%;
+        mask: url(/images/beef.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.squid a {
+        -webkit-mask: url(/images/squid.svg) no-repeat 50% 50%;
+        mask: url(/images/squid.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.staple a {
+        -webkit-mask: url(/images/staple.svg) no-repeat 50% 50%;
+        mask: url(/images/staple.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.pearl a {
+        -webkit-mask: url(/images/pearl.svg) no-repeat 50% 50%;
+        mask: url(/images/pearl.svg) no-repeat 50% 50%; }
+  section.which-college .btn-fb {
+    margin-top: 30px; }
 
 footer {
   background-color: #222222;
@@ -6075,5 +6190,34 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: #222222; }
+
+section.block .department {
+  margin-top: 100px; }
+  section.block .department .img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    border-radius: 5px; }
+  section.block .department h2 {
+    font-size: 35px; }
+  section.block .department .dl-horizontal {
+    font-size: 18px; }
+    @media (min-width: 768px) {
+      section.block .department .dl-horizontal dt {
+        width: 100px; }
+      section.block .department .dl-horizontal dd {
+        margin-left: 120px;
+        letter-spacing: 20px;
+        font-size: 20px;
+        margin-bottom: 0px; } }
+    section.block .department .dl-horizontal dd {
+      letter-spacing: 20px;
+      font-size: 20px; }
+    @media (max-width: 767px) {
+      section.block .department .dl-horizontal dd {
+        letter-spacing: 20px;
+        font-size: 20px;
+        margin-bottom: 20px; } }
 
 /*# sourceMappingURL=app.css.map */
