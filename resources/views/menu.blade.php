@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               @foreach ($list as $key => $section)
-                <li> <a class="page-scroll" href="#{{$key}}">{{$section}}</a> </li>
+                <li> <a class="page-scroll" href="#{{$key}}">{{$section['name']}}</a> </li>
               @endforeach
               <li> <a class="page-scroll" href="#which-college">我是哪個學院?</a> </li>
             </ul>
