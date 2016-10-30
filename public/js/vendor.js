@@ -12765,6 +12765,19 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 (function($) {
+
+  let foods = [
+    {name: "飯學院", code: "rice"},
+    {name: "豆腐學院", code: "tofu"},
+    {name: "鹹酥雞學院", code: "chicken"},
+    {name: "麵線學院", code: "vermicelli"},
+    {name: "蚵仔學院", code: "oysters"},
+    {name: "牛肉學院", code: "beef-noodles"},
+    {name: "羹學院", code: "thick-soup"},
+    {name: "名產學院", code: "staple"},
+    {name: "珍珠學院", code: "pearl"},
+  ];
+
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -12799,7 +12812,6 @@ if (typeof jQuery === 'undefined') {
      */
      // This is called with the results from from FB.getLoginStatus().
      function statusChangeCallback(response) {
-       console.log('statusChangeCallback');
        console.log(response);
        // The response object is returned with a status field that lets the
        // app know the current login status of the person.
@@ -12807,7 +12819,18 @@ if (typeof jQuery === 'undefined') {
        // for FB.getLoginStatus().
        if (response.status === 'connected') {
          // Logged into your app and Facebook.
-         testAPI();
+        //  testAPI();
+        let collapse = foods[+response.authResponse.userID%9];
+
+        FB.ui({
+  			  method: 'share',
+  				hashtag: '#我是食尚大學' + collapse.name,
+  			  href: 'http://halloween.77nougat.com?from=fb&monster_id=3&name=%E8%AC%9D%E5%A3%AB%E6%8F%9A',
+  			}, function(response){
+  				console.warn(response);
+  			});
+
+
        } else if (response.status === 'not_authorized') {
          // The person is logged into Facebook, but not your app.
          document.getElementById('status').innerHTML = 'Please log ' +
@@ -12824,6 +12847,7 @@ if (typeof jQuery === 'undefined') {
      // Button.  See the onlogin handler attached to it in the sample
      // code below.
      function checkLoginState() {
+       console.warn("這邊這海?");
        FB.getLoginStatus(function(response) {
          statusChangeCallback(response);
        });
@@ -12849,10 +12873,6 @@ if (typeof jQuery === 'undefined') {
        //    your app or not.
        //
        // These three cases are handled in the callback function.
-
-       FB.getLoginStatus(function(response) {
-         statusChangeCallback(response);
-       });
 
      };
 

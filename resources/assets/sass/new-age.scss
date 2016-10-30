@@ -239,17 +239,17 @@ header {
     .chicken{
       mask: url(/images/chicken.svg) no-repeat 50% 50%;
     }
-    .noodles{
-      mask: url(/images/noodles.svg) no-repeat 50% 50%;
+    .vermicelli{
+      mask: url(/images/vermicelli.svg) no-repeat 50% 50%;
     }
     .oysters{
       mask: url(/images/oysters.svg) no-repeat 50% 50%;
     }
-    .beef{
-      mask: url(/images/beef.svg) no-repeat 50% 50%;
+    .beef-noodles{
+      mask: url(/images/beef-noodles.svg) no-repeat 50% 50%;
     }
-    .squid{
-      mask: url(/images/squid.svg) no-repeat 50% 50%;
+    .thick-soup{
+      mask: url(/images/thick-soup.svg) no-repeat 50% 50%;
     }
     .staple{
       mask: url(/images/staple.svg) no-repeat 50% 50%;
@@ -330,15 +330,15 @@ section.features {
             width: 80px;
             height: 83px;
             display: inline-block;
-            &.rice{ background-image:    url(/images/rice.svg); }
-            &.tofu{ background-image:    url(/images/tofu.svg); }
-            &.chicken{ background-image: url(/images/chicken.svg); }
-            &.noodles{ background-image: url(/images/noodles.svg); }
-            &.oysters{ background-image: url(/images/oysters.svg); }
-            &.beef{ background-image:    url(/images/beef.svg); }
-            &.squid{ background-image:   url(/images/squid.svg); }
-            &.staple{ background-image:  url(/images/staple.svg); }
-            &.pearl{ background-image:   url(/images/pearl.svg); }
+            &.rice{ background-image:         url(/images/rice.svg); }
+            &.tofu{ background-image:         url(/images/tofu.svg); }
+            &.chicken{ background-image:      url(/images/chicken.svg); }
+            &.vermicelli{ background-image:   url(/images/vermicelli.svg); }
+            &.oysters{ background-image:      url(/images/oysters.svg); }
+            &.beef-noodles{ background-image: url(/images/beef-noodles.svg); }
+            &.thick-soup{ background-image:        url(/images/thick-soup.svg); }
+            &.staple{ background-image:       url(/images/staple.svg); }
+            &.pearl{ background-image:        url(/images/pearl.svg); }
         }
         .text-muted{
           text-align: left;
@@ -439,10 +439,10 @@ section.which-college {
             &.rice a{ mask: url(/images/rice.svg) no-repeat 50% 50%; }
             &.tofu a{ mask: url(/images/tofu.svg) no-repeat 50% 50%; }
             &.chicken a{ mask: url(/images/chicken.svg) no-repeat 50% 50%; }
-            &.noodles a{ mask: url(/images/noodles.svg) no-repeat 50% 50%; }
+            &.vermicelli a{ mask: url(/images/vermicelli.svg) no-repeat 50% 50%; }
             &.oysters a{ mask: url(/images/oysters.svg) no-repeat 50% 50%; }
-            &.beef a{ mask: url(/images/beef.svg) no-repeat 50% 50%; }
-            &.squid a{ mask: url(/images/squid.svg) no-repeat 50% 50%; }
+            &.beef-noodles a{ mask: url(/images/beef-noodles.svg) no-repeat 50% 50%; }
+            &.thick-soup a{ mask: url(/images/thick-soup.svg) no-repeat 50% 50%; }
             &.staple a{ mask: url(/images/staple.svg) no-repeat 50% 50%; }
             &.pearl a{ mask: url(/images/pearl.svg) no-repeat 50% 50%; }
         }

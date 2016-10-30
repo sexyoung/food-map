@@ -17,7 +17,7 @@
         <div class="col-sm-12 text-center">
           <div class="section-heading header-content">
             <div class="header-content-inner">
-              <span class="tofu icon"></span>
+              <span class="{{$college}} icon"></span>
               <h1>{{$college_name}}</h1>
               <p class="text-muted">
                 {!!$college_intro!!}
@@ -33,7 +33,7 @@
 
   <section class="block">
     <div class="container">
-      <div class="row">
+      <div class="row" id="intro">
           <div class="col-lg-12 text-center">
               <div class="section-heading">
                   <h2>{{$college_name}}系所</h2>

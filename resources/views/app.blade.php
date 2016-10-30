@@ -41,10 +41,10 @@
                     <li class="rice" data-text="飯學院"> <a href="{{url("rice")}}"></a> </li>
                     <li class="tofu" data-text="豆腐學院"> <a href="{{url("tofu")}}"></a> </li>
                     <li class="chicken" data-text="鹹酥雞學院"> <a href="{{url("chicken")}}"></a> </li>
-                    <li class="noodles" data-text="麵線學院"> <a href="{{url("noodles")}}"></a> </li>
+                    <li class="vermicelli" data-text="麵線學院"> <a href="{{url("vermicelli")}}"></a> </li>
                     <li class="oysters" data-text="蚵仔學院"> <a href="{{url("oysters")}}"></a> </li>
-                    <li class="beef" data-text="牛肉學院"> <a href="{{url("beef")}}"></a> </li>
-                    <li class="squid" data-text="羹學院"> <a href="{{url("squid")}}"></a> </li>
+                    <li class="beef-noodles" data-text="牛肉麵學院"> <a href="{{url("beef-noodles")}}"></a> </li>
+                    <li class="thick-soup" data-text="羹學院"> <a href="{{url("thick-soup")}}"></a> </li>
                     <li class="staple" data-text="名產學院"> <a href="{{url("staple")}}"></a> </li>
                     <li class="pearl" data-text="珍珠學院"> <a href="{{url("pearl")}}"></a> </li>
                 </ul>

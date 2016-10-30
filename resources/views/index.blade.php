@@ -8,8 +8,8 @@
 
   @include('menu', [
     "list" => [
-      "intro" => "大學介紹",
-      "features" => "探索學院"
+      "intro" => ["name" => "大學介紹"],
+      "features" => ["name" => "探索學院"]
     ]
   ])
 
@@ -122,12 +122,12 @@
                       <div class="row">
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon noodles"></i>
+                                  <i class="icon vermicelli"></i>
                                   <h3>麵線學院</h3>
                                   <p class="text-muted">
                                     九天玄女指點創制的長壽麵，金梭玉帛、牽絲如縷，簡直巧奪天工。
                                   </p>
-                                  <a href="{{url("noodles")}}" class="btn btn-success">參觀麵線學院</a>
+                                  <a href="{{url("vermicelli")}}" class="btn btn-success">參觀麵線學院</a>
                               </div>
                           </div>
                           <div class="col-md-4">
@@ -142,24 +142,24 @@
                           </div>
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon beef"></i>
+                                  <i class="icon beef-noodles"></i>
                                   <h3>牛肉學院</h3>
                                   <p class="text-muted">
                                     所有美味集結在一碗，札實、肥美、飽滿三種享受一次滿足。
                                   </p>
-                                  <a href="{{url("beef")}}" class="btn btn-success">參觀牛肉學院</a>
+                                  <a href="{{url("beef-noodles")}}" class="btn btn-success">參觀牛肉學院</a>
                               </div>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-md-4">
                               <div class="feature-item">
-                                  <i class="icon squid"></i>
+                                  <i class="icon thick-soup"></i>
                                   <h3>羹學院</h3>
                                   <p class="text-muted">
                                     似湯非湯的料理，與海產完美結合，滑順又飛快的滋味滿足心頭！
                                   </p>
-                                  <a href="{{url("squid")}}" class="btn btn-success">參觀羹學院</a>
+                                  <a href="{{url("thick-soup")}}" class="btn btn-success">參觀羹學院</a>
                               </div>
                           </div>
                           <div class="col-md-4">
@@ -198,16 +198,15 @@
         const hR = 1 / 9 * 16;
         var w = $(window).width();
         var h = $("header").height();
-// console.warn(w, h);
         if(w > 1150){
           h = w * wR;
         }else{
           w = h * hR;
         }
-
         $("header .bg").width(w);
         $("header .bg").height(h);
-      })
+      });
+      $(window).trigger('resize');
     });
   </script>
 @endsection

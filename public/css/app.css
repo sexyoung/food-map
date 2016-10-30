@@ -5920,18 +5920,18 @@ header {
   header .chicken {
     -webkit-mask: url(/images/chicken.svg) no-repeat 50% 50%;
     mask: url(/images/chicken.svg) no-repeat 50% 50%; }
-  header .noodles {
-    -webkit-mask: url(/images/noodles.svg) no-repeat 50% 50%;
-    mask: url(/images/noodles.svg) no-repeat 50% 50%; }
+  header .vermicelli {
+    -webkit-mask: url(/images/vermicelli.svg) no-repeat 50% 50%;
+    mask: url(/images/vermicelli.svg) no-repeat 50% 50%; }
   header .oysters {
     -webkit-mask: url(/images/oysters.svg) no-repeat 50% 50%;
     mask: url(/images/oysters.svg) no-repeat 50% 50%; }
-  header .beef {
-    -webkit-mask: url(/images/beef.svg) no-repeat 50% 50%;
-    mask: url(/images/beef.svg) no-repeat 50% 50%; }
-  header .squid {
-    -webkit-mask: url(/images/squid.svg) no-repeat 50% 50%;
-    mask: url(/images/squid.svg) no-repeat 50% 50%; }
+  header .beef-noodles {
+    -webkit-mask: url(/images/beef-noodles.svg) no-repeat 50% 50%;
+    mask: url(/images/beef-noodles.svg) no-repeat 50% 50%; }
+  header .thick-soup {
+    -webkit-mask: url(/images/thick-soup.svg) no-repeat 50% 50%;
+    mask: url(/images/thick-soup.svg) no-repeat 50% 50%; }
   header .staple {
     -webkit-mask: url(/images/staple.svg) no-repeat 50% 50%;
     mask: url(/images/staple.svg) no-repeat 50% 50%; }
@@ -5998,14 +5998,14 @@ section.features .feature-item {
       background-image: url(/images/tofu.svg); }
     section.features .feature-item i.chicken {
       background-image: url(/images/chicken.svg); }
-    section.features .feature-item i.noodles {
-      background-image: url(/images/noodles.svg); }
+    section.features .feature-item i.vermicelli {
+      background-image: url(/images/vermicelli.svg); }
     section.features .feature-item i.oysters {
       background-image: url(/images/oysters.svg); }
-    section.features .feature-item i.beef {
-      background-image: url(/images/beef.svg); }
-    section.features .feature-item i.squid {
-      background-image: url(/images/squid.svg); }
+    section.features .feature-item i.beef-noodles {
+      background-image: url(/images/beef-noodles.svg); }
+    section.features .feature-item i.thick-soup {
+      background-image: url(/images/thick-soup.svg); }
     section.features .feature-item i.staple {
       background-image: url(/images/staple.svg); }
     section.features .feature-item i.pearl {
@@ -6097,18 +6097,18 @@ section.which-college {
       section.which-college ul.list-social li.chicken a {
         -webkit-mask: url(/images/chicken.svg) no-repeat 50% 50%;
         mask: url(/images/chicken.svg) no-repeat 50% 50%; }
-      section.which-college ul.list-social li.noodles a {
-        -webkit-mask: url(/images/noodles.svg) no-repeat 50% 50%;
-        mask: url(/images/noodles.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.vermicelli a {
+        -webkit-mask: url(/images/vermicelli.svg) no-repeat 50% 50%;
+        mask: url(/images/vermicelli.svg) no-repeat 50% 50%; }
       section.which-college ul.list-social li.oysters a {
         -webkit-mask: url(/images/oysters.svg) no-repeat 50% 50%;
         mask: url(/images/oysters.svg) no-repeat 50% 50%; }
-      section.which-college ul.list-social li.beef a {
-        -webkit-mask: url(/images/beef.svg) no-repeat 50% 50%;
-        mask: url(/images/beef.svg) no-repeat 50% 50%; }
-      section.which-college ul.list-social li.squid a {
-        -webkit-mask: url(/images/squid.svg) no-repeat 50% 50%;
-        mask: url(/images/squid.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.beef-noodles a {
+        -webkit-mask: url(/images/beef-noodles.svg) no-repeat 50% 50%;
+        mask: url(/images/beef-noodles.svg) no-repeat 50% 50%; }
+      section.which-college ul.list-social li.thick-soup a {
+        -webkit-mask: url(/images/thick-soup.svg) no-repeat 50% 50%;
+        mask: url(/images/thick-soup.svg) no-repeat 50% 50%; }
       section.which-college ul.list-social li.staple a {
         -webkit-mask: url(/images/staple.svg) no-repeat 50% 50%;
         mask: url(/images/staple.svg) no-repeat 50% 50%; }
