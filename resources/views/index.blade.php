@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('meta')
+  <title>{{env("WEB_NAME")}}</title>
   <meta property="og:title" content="{{env("WEB_NAME")}}" />
   <meta property="og:description" content="經歷過荷西統治、日治時期、國民政府來臺 屹立不搖的臺灣各大美食學院，等你來探索" />
   <meta property="og:image" content="{{url("/images/image.jpg")}}" />

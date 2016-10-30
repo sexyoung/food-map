@@ -50,18 +50,16 @@
             </div>
         </section>
 
+        @if (!request()->is('/'))
+          <div class="fb-comment-embed" data-href="{!!request()->fullUrl()!!}" data-width="100%"></div>
+        @endif
+        
         <footer>
             <div class="container">
-                <p>&copy; 2016 食尚大學 版權聲明，禁止未經授權轉貼節錄.</p>
+                <p>&copy; 2016 食尚大學</p>
                 <ul class="list-inline">
                     <li>
-                        <a href="#">Privacy</a>
-                    </li>
-                    <li>
-                        <a href="#">Terms</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQ</a>
+                        <a href="mailto:Habuche@gmail.com">若您任何問題，歡迎來信 作者信箱</a>
                     </li>
                 </ul>
             </div>
