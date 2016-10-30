@@ -3,14 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{env("WEB_NAME")}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="fb:app_id" content="{{env('FACEBOOK_APP_ID')}}" />
       	<meta property="og:type" content="website" />
       	<meta property="og:url" content="{!!request()->fullUrl()!!}" />
-      	<meta property="og:title" content="{{env("WEB_NAME")}}" />
-      	<meta property="og:description" content="og:description" />
         @yield('meta')
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->

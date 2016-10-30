@@ -1,7 +1,9 @@
 @extends('app')
 
 @section('meta')
-  <meta property="og:image" content="" />
+  <meta property="og:title" content="{{env("WEB_NAME")}}" />
+  <meta property="og:description" content="經歷過荷西統治、日治時期、國民政府來臺 屹立不搖的臺灣各大美食學院，等你來探索" />
+  <meta property="og:image" content="{{url("/images/image.jpg")}}" />
 @endsection
 
 @section('content')
@@ -14,7 +16,7 @@
   ])
 
   <header>
-    <video class="bg" width="640" height="360" loop muted autoplay>
+    <video class="bg" width="640" height="360" loop muted autoplay poster="{{url("/images/image.jpg")}}">
       <source src="/video/video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>

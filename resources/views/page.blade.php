@@ -1,11 +1,13 @@
 @extends('app')
 
 @section('meta')
-  <meta property="og:image" content="" />
+  <title>{{env("WEB_NAME"). " - $college_name"}}</title>
+  <meta property="og:title" content="{{"我的學院是 - $college_name | ".env("WEB_NAME")}}" />
+  <meta property="og:description" content="{{str_replace("<br />","，",$college_intro)}}" />
+  <meta property="og:image" content="{{url("images/fb-$college.jpg")}}" />
 @endsection
 
 @section('content')
-
   @include('menu', [
     "list" => $departments
   ])
