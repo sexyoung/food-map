@@ -54,12 +54,12 @@
        if (response.status === 'connected') {
          // Logged into your app and Facebook.
         //  testAPI();
-        let collapse = foods[+response.authResponse.userID%9];
+        let collage = foods[+response.authResponse.userID%9];
 
         FB.ui({
   			  method: 'share',
-  				hashtag: '#我是食尚大學' + collapse.name,
-  			  href: 'http://halloween.77nougat.com?from=fb&monster_id=3&name=%E8%AC%9D%E5%A3%AB%E6%8F%9A',
+  				hashtag: '#我是食尚大學' + collage.name,
+  			  href: $("meta[property='og:url']").content + "/?collage=" + (+response.authResponse.userID%9),
   			}, function(response){
   				console.warn(response);
   			});
