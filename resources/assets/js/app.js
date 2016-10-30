@@ -46,7 +46,6 @@
      */
      // This is called with the results from from FB.getLoginStatus().
      function statusChangeCallback(response) {
-       console.log(response);
        // The response object is returned with a status field that lets the
        // app know the current login status of the person.
        // Full docs on the response object can be found in the documentation
@@ -59,7 +58,7 @@
         FB.ui({
   			  method: 'share',
   				hashtag: '#我是食尚大學' + collage.name,
-  			  href: $("meta[property='og:url']").attr("content") + "/?collage=" + (+response.authResponse.userID%9),
+  			  href: $("meta[property='og:url']").attr("content") + "/" + collage.code,
   			}, function(response){
   				console.warn(response);
   			});
