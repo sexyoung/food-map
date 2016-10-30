@@ -10,9 +10,9 @@
         @yield('meta')
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="shortcut icon" type="image/png" href="favicon.png">
-        
+        <link rel="apple-touch-icon" href="{{url("images/apple-touch-icon.png")}}">
+        <link rel="shortcut icon" type="image/png" href="{{url("images/favicon.png")}}">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
 
         <!-- Custom Fonts -->
