@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="fb:app_id" content="{{env('FACEBOOK_APP_ID')}}" />
       	<meta property="og:type" content="website" />
-      	<meta property="og:url" content="{!!request()->fullUrl()!!}" />
         @yield('meta')
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->

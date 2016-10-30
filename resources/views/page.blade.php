@@ -5,6 +5,7 @@
   <meta property="og:title" content="{{"我的學院是 - $college_name | ".env("WEB_NAME")}}" />
   <meta property="og:description" content="{{str_replace("<br />","，",$college_intro)}}" />
   <meta property="og:image" content="{{url("images/fb-$college.jpg")}}" />
+  <meta property="og:url" content="{{url("/$college")}}" />
 @endsection
 
 @section('content')
