@@ -59,7 +59,7 @@
         FB.ui({
   			  method: 'share',
   				hashtag: '#我是食尚大學' + collage.name,
-  			  href: $("meta[property='og:url']").content + "/?collage=" + (+response.authResponse.userID%9),
+  			  href: $("meta[property='og:url']").attr("content") + "/?collage=" + (+response.authResponse.userID%9),
   			}, function(response){
   				console.warn(response);
   			});
