@@ -400,7 +400,7 @@ class MainController extends Controller
     public function pearl()
     {
       return view("page", [
-        "college" => "staple",
+        "college" => "pearl",
         "college_name" => "珍珠學院",
         "college_intro" => "飲品類無人不知的珍珠，不只紅遍台灣<br />更是揚名國際，人手幾乎一杯",
         "college_intro_2" => "綠鬢朱顏 珍愛相隨",

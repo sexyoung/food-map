@@ -17,7 +17,7 @@
   ])
 
   <header>
-    <video class="bg" width="640" height="360" loop muted autoplay poster="{{url("/images/image.jpg")}}">
+    <video class="bg" width="640" height="360" loop muted autoplay poster="{{url("/images/video-preview.jpg")}}">
       <source src="/video/video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
