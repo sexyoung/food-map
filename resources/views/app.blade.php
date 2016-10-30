@@ -50,10 +50,6 @@
             </div>
         </section>
 
-        @if (!request()->is('/'))
-          <div class="fb-comment-embed" data-href="{!!request()->fullUrl()!!}" data-width="100%"></div>
-        @endif
-        
         <footer>
             <div class="container">
                 <p>&copy; 2016 食尚大學</p>
