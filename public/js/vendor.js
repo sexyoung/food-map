@@ -12824,7 +12824,7 @@ if (typeof jQuery === 'undefined') {
         FB.ui({
   			  method: 'share',
   				hashtag: '#我是食尚大學' + collage.name,
-  			  href: location.origin + "/" + collage.code,
+  			  href: location.origin + "/" + collage.code + "?from=fb",
   			}, function(response){
   				console.warn(response);
   			});
