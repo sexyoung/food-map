@@ -59,7 +59,7 @@
             </p>
             <dl class="dl-horizontal">
               @foreach ($department['ability'] as $aname => $value)
-                <dt>{{$aname}}</dt><dd>{{$value}}</dd>
+                <dt>{{$aname}}</dt><dd class="lv{{strlen($value)/3}}">{{$value}}</dd>
               @endforeach
             </dl>
           </div>
