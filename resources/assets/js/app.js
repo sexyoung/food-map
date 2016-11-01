@@ -57,6 +57,7 @@
 
         FB.ui({
   			  method: 'share',
+          mobile_iframe: true,
   				hashtag: '#我是食尚大學' + collage.name,
   			  href: location.origin + "/" + collage.code + "?from=fb",
   			}, function(response){
