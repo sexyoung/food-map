@@ -12,9 +12,11 @@
   @include('menu', [
     "list" => $departments
   ])
-
   <header class="{{$college}}">
-		<div class="bg"></div>
+    <video class="bg" width="640" height="360" loop muted autoplay poster="{{url("/images/".array_rand($departments).".jpg")}}">
+      <source src="/video/video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
@@ -67,4 +69,25 @@
       @endforeach
     </div>
   </section>
+@endsection
+
+@section('js')
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(window).on("resize", function(event) {
+        const wR = 1 / 16 * 9;
+        const hR = 1 / 9 * 16;
+        var w = $(window).width();
+        var h = $("header").height();
+        if(w > 1150){
+          h = w * wR;
+        }else{
+          w = h * hR;
+        }
+        $("header .bg").width(w);
+        $("header .bg").height(h);
+      });
+      $(window).trigger('resize');
+    });
+  </script>
 @endsection
