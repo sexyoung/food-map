@@ -5852,7 +5852,10 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     background-size: cover;
-    background-position: center;
+    background-position: center; }
+  header video.bg {
+    opacity: .45; }
+  header div.bg {
     opacity: .15; }
   header .header-content {
     text-align: center;

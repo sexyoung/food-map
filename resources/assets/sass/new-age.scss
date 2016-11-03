@@ -152,8 +152,9 @@ header {
       transform: translate(-50%, -50%);
       background-size: cover;
       background-position: center;
-      opacity: .15;
     }
+    video.bg{ opacity: .45; }
+    div.bg{ opacity: .15; }
     .header-content {
         text-align: center;
         padding: 150px 0 50px;
