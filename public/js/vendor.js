@@ -12812,7 +12812,6 @@ if (typeof jQuery === 'undefined') {
      */
      // This is called with the results from from FB.getLoginStatus().
      function statusChangeCallback(response) {
-       console.log(response);
        // The response object is returned with a status field that lets the
        // app know the current login status of the person.
        // Full docs on the response object can be found in the documentation
@@ -12820,12 +12819,13 @@ if (typeof jQuery === 'undefined') {
        if (response.status === 'connected') {
          // Logged into your app and Facebook.
         //  testAPI();
-        let collapse = foods[+response.authResponse.userID%9];
+        let collage = foods[+response.authResponse.userID%9];
 
         FB.ui({
   			  method: 'share',
-  				hashtag: '#我是食尚大學' + collapse.name,
-  			  href: 'http://halloween.77nougat.com?from=fb&monster_id=3&name=%E8%AC%9D%E5%A3%AB%E6%8F%9A',
+          mobile_iframe: true,
+  				hashtag: '#我是食尚大學' + collage.name,
+  			  href: location.origin + "/" + collage.code + "?from=fb",
   			}, function(response){
   				console.warn(response);
   			});

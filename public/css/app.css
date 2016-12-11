@@ -5852,8 +5852,11 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     background-size: cover;
-    background-position: center;
+    background-position: center; }
+  header video.bg {
     opacity: .45; }
+  header div.bg {
+    opacity: .15; }
   header .header-content {
     text-align: center;
     padding: 150px 0 50px;
@@ -5873,6 +5876,7 @@ header {
           height: 50px;
           margin-bottom: 25px; }
       header .header-content .header-content-inner .btn {
+        font-size: 18px;
         margin-top: 30px; }
       header .header-content .header-content-inner .text-muted {
         color: #ccc; }
@@ -6212,6 +6216,16 @@ section.block .department {
     section.block .department .dl-horizontal dd {
       letter-spacing: 20px;
       font-size: 20px; }
+      section.block .department .dl-horizontal dd.lv1 {
+        color: #7fe159; }
+      section.block .department .dl-horizontal dd.lv2 {
+        color: #90b851; }
+      section.block .department .dl-horizontal dd.lv3 {
+        color: #a38a48; }
+      section.block .department .dl-horizontal dd.lv4 {
+        color: #b8553e; }
+      section.block .department .dl-horizontal dd.lv5 {
+        color: #c53838; }
     @media (max-width: 767px) {
       section.block .department .dl-horizontal dd {
         letter-spacing: 20px;

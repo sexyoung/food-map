@@ -3,18 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{env("WEB_NAME")}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="fb:app_id" content="{{env('FACEBOOK_APP_ID')}}" />
       	<meta property="og:type" content="website" />
-      	<meta property="og:url" content="{!!request()->fullUrl()!!}" />
-      	<meta property="og:title" content="{{env("WEB_NAME")}}" />
-      	<meta property="og:description" content="og:description" />
         @yield('meta')
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="{{url("images/apple-touch-icon.png")}}">
+        <link rel="shortcut icon" type="image/png" href="{{url("images/favicon.png")}}">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
 
         <!-- Custom Fonts -->
@@ -54,16 +52,10 @@
 
         <footer>
             <div class="container">
-                <p>&copy; 2016 食尚大學 版權聲明，禁止未經授權轉貼節錄.</p>
+                <p>&copy; 2016 食尚大學</p>
                 <ul class="list-inline">
                     <li>
-                        <a href="#">Privacy</a>
-                    </li>
-                    <li>
-                        <a href="#">Terms</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQ</a>
+                        <a href="mailto:Habuche@gmail.com">若您任何問題，歡迎來信 作者信箱</a>
                     </li>
                 </ul>
             </div>

@@ -27,6 +27,11 @@ section.block{
       dd{
         letter-spacing: 20px;
         font-size: 20px;
+        &.lv1{ color: #7fe159; }
+        &.lv2{ color: #90b851; }
+        &.lv3{ color: #a38a48; }
+        &.lv4{ color: #b8553e; }
+        &.lv5{ color: #c53838; }
       }
 
       @media (max-width: 767px) {

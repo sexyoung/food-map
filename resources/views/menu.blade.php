@@ -5,7 +5,11 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> 導覽選單 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="{{request()->is('/')?"#page-top":"/"}}">{{env("WEB_NAME")}}</a>
+            @if (request()->is('/'))
+              <a class="navbar-brand page-scroll" href="#page-top">{{env("WEB_NAME")}}</a>
+            @else
+              <a class="navbar-brand page-scroll" href="/">回首頁</a>
+            @endif
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

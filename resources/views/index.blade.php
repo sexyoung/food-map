@@ -1,7 +1,11 @@
 @extends('app')
 
 @section('meta')
-  <meta property="og:image" content="" />
+  <title>{{env("WEB_NAME")}}</title>
+  <meta property="og:title" content="{{env("WEB_NAME")}}" />
+  <meta property="og:description" content="經歷過荷西統治、日治時期、國民政府來臺 屹立不搖的臺灣各大美食學院，等你來探索" />
+  <meta property="og:image" content="{{url("/images/image.jpg")}}" />
+  <meta property="og:url" content="{{url("/")}}" />
 @endsection
 
 @section('content')
@@ -14,7 +18,7 @@
   ])
 
   <header>
-    <video class="bg" width="640" height="360" loop muted autoplay>
+    <video class="bg" width="640" height="360" loop muted autoplay poster="{{url("/images/video-preview.jpg")}}">
       <source src="/video/video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -59,9 +63,9 @@
                 發展出一套揉合大江南北與西餐的飲食文化。
               </p>
               <p class="text">
-                而食尚大學是臺灣處處可見，來自不同經典不朽的「臺灣美食學院」所構成的美食大學，
+                而食尚大學是以臺灣處處可見，來自不同經典不朽的道地料理所構成的美食大學，
                 發展至今每道美食都有各自的擁護者與勢力。食尚大學內依照種類分出九大學院。
-                每道菜的獨天得厚，不只臺灣人，更是有許多外國食客紛紛前往入學。
+                每道菜都可說是得天獨厚，不只臺灣人，更有許多外國食客紛紛前往入學。
               </p>
               <p class="text">
                 而您，又是哪一間學院的呢？
