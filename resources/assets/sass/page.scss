@@ -1,0 +1,46 @@
+section.block{
+  .department{
+    margin-top: 100px;
+    .img{
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 350px;
+      border-radius: 5px;
+    }
+    h2{
+      font-size: 35px;
+    }
+    .dl-horizontal{
+      font-size: 18px;
+      @media (min-width: 768px) {
+        dt{
+          width: 100px;
+        }
+        dd{
+          margin-left: 120px;
+          letter-spacing: 20px;
+          font-size: 20px;
+          margin-bottom: 0px;
+        }
+      }
+      dd{
+        letter-spacing: 20px;
+        font-size: 20px;
+        &.lv1{ color: #7fe159; }
+        &.lv2{ color: #90b851; }
+        &.lv3{ color: #a38a48; }
+        &.lv4{ color: #b8553e; }
+        &.lv5{ color: #c53838; }
+      }
+
+      @media (max-width: 767px) {
+        dd{
+          letter-spacing: 20px;
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
