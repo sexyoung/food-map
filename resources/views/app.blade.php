@@ -75,7 +75,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <script src="/js/vendor.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.0/jquery.vide.min.js"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
         @yield('js')
     </body>
 </html>

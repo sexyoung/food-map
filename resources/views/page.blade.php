@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+  @include('apply')
   @include('menu', [
     "list" => $departments
   ])
@@ -86,5 +87,12 @@
       });
       $(window).trigger('resize');
     });
+
+    $('#applyModal').modal();
+
+    $('form.apply').on('submit', function(event) {
+      event.preventDefault();
+      console.warn($(this).serialize());
+    })
   </script>
 @endsection
