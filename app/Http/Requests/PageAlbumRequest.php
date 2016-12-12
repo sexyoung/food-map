@@ -27,7 +27,15 @@ class PageAlbumRequest extends Request
           'type'       =>  'required',
           'page_user'  =>  'required',
           'page_email' =>  'email|required',
-          'album_id'   =>  'numeric|required'
+          'album_id'   =>  'numeric|required|unique:page_albums'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'album_id.unique' => '該相簿已被使用'
+        ];
+    }
+
 }

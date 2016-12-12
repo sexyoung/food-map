@@ -1,9 +1,9 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-    // $('#applyModal').modal({
-    //   backdrop: 'static'
-    // });
+    $('#applyModal').modal({
+      backdrop: 'static'
+    });
 
     $.ajaxSetup({
        beforeSend: function(){
@@ -43,8 +43,14 @@
         }, 2000);
       })
       .fail(function(err){
+        let errorMessages = [];
+        for(key in err.responseJSON){
+          errorMessages.push(err.responseJSON[key][0]);
+        }
         $(".modal-body .alert")
-          .text(err.responseJSON.errorMessage)
+          .html("<ul>"+errorMessages.map(function(err){
+            return "<li>"+err+"</li>";
+          })+"</ul>")
           .removeClass("hide alert-warning")
           .addClass("alert-danger");
       })

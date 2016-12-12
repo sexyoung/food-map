@@ -19,7 +19,7 @@ class CreatePageAlbumsTable extends Migration
             $table->string('page_name', 100);
             $table->string('page_user', 100);
             $table->string('page_email', 100);
-            $table->string('album_id', 100);
+            $table->string('album_id', 100)->unique();
             $table->string('location', 100);
             $table->float('latitude');
             $table->float('longitude');

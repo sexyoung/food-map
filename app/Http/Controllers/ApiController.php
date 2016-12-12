@@ -26,7 +26,9 @@ class ApiController extends Controller
       $pageData = $this->pageInfo($data['album_id']);
       if(!$pageData){
         return response()->json([
-          "errorMessage" => "請輸入正確的 FB 粉絲團相簿網址"
+          "errorMessage" => [
+            "請輸入正確的 FB 粉絲團相簿網址"
+          ]
         ], 500);
       }
 
