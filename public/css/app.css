@@ -6232,4 +6232,33 @@ section.block .department {
         font-size: 20px;
         margin-bottom: 20px; } }
 
+#applyModal .form-group.preview {
+  padding: 10px; }
+  #applyModal .form-group.preview .img-responsive {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; }
+    #applyModal .form-group.preview .img-responsive:before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      content: '預覽中';
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 2em;
+      letter-spacing: 10px; }
+  @media (max-width: 767px) {
+    #applyModal .form-group.preview .img-responsive {
+      height: 200px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #applyModal .form-group.preview .img-responsive {
+      height: 300px; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    #applyModal .form-group.preview .img-responsive {
+      height: 300px; } }
+  @media (min-width: 1200px) {
+    #applyModal .form-group.preview .img-responsive {
+      height: 300px; } }
+
 /*# sourceMappingURL=app.css.map */

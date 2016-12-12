@@ -19,6 +19,7 @@ class ApiController extends Controller
   function __construct()
   {
     $this->fb = app(LaravelFacebookSdk::class);
+    $this->fb->setDefaultAccessToken(env('FACEBOOK_APP_LONG_ACCESS_TOKEN'));
   }
     public function applyFor(PageAlbum $pageAlbum, PageAlbumRequest $request)
     {
@@ -70,6 +71,16 @@ class ApiController extends Controller
         "latitude"  => $latitude,
         "longitude" => $longitude
       ];
+    }
+
+    public function albumList($albumID)
+    {
+      $response = $this->fb->get("$albumID/photos?fields=images");
+      $albumsEdge = ($response->getGraphEdge());
+      foreach ($albumsEdge as $photo) {
+        $photos[] = $photo->asArray()['images'][0]['source'];
+      }
+      return $photos;
     }
 
 }

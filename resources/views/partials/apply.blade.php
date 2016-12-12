@@ -64,6 +64,13 @@
             </div>
           </div>
 
+          <div class="form-group preview">
+            <label for="inputEmail" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+              <div class="img-responsive"></div>
+            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>

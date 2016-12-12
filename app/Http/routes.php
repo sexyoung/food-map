@@ -25,4 +25,4 @@ Route::get('pearl',           "MainController@pearl");
 
 Route::post('apply-for',      "ApiController@applyFor");
 Route::get('glt',             "ApiController@glt");
-Route::get('page-info',       "ApiController@pageInfo");
+Route::get('album-list/{albumID?}',      "ApiController@albumList");
