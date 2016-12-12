@@ -11,14 +11,18 @@
 |
 */
 
-Route::get('/', "MainController@index");
+Route::get('/',               "MainController@index");
 
-Route::get('rice',    "MainController@rice");
-Route::get('tofu',    "MainController@tofu");
-Route::get('chicken', "MainController@chicken");
-Route::get('vermicelli', "MainController@vermicelli");
-Route::get('oysters', "MainController@oysters");
+Route::get('rice',            "MainController@rice");
+Route::get('tofu',            "MainController@tofu");
+Route::get('chicken',         "MainController@chicken");
+Route::get('vermicelli',      "MainController@vermicelli");
+Route::get('oysters',         "MainController@oysters");
 Route::get('beef-noodles',    "MainController@beef_noodles");
-Route::get('thick-soup',   "MainController@thick_soup");
-Route::get('staple',  "MainController@staple");
-Route::get('pearl',   "MainController@pearl");
+Route::get('thick-soup',      "MainController@thick_soup");
+Route::get('staple',          "MainController@staple");
+Route::get('pearl',           "MainController@pearl");
+
+Route::post('apply-for',      "ApiController@applyFor");
+Route::get('glt',             "ApiController@glt");
+Route::get('page-info',       "ApiController@pageInfo");

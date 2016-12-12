@@ -10,7 +10,7 @@
 
 @section('content')
 
-  @include('menu', [
+  @include('partials.menu', [
     "list" => [
       "intro" => ["name" => "大學介紹"],
       "features" => ["name" => "探索學院"]
@@ -192,25 +192,4 @@
           </div>
   </section>
 
-@endsection
-
-@section('js')
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(window).on("resize", function(event) {
-        const wR = 1 / 16 * 9;
-        const hR = 1 / 9 * 16;
-        var w = $(window).width();
-        var h = $("header").height();
-        if(w > 1150){
-          h = w * wR;
-        }else{
-          w = h * hR;
-        }
-        $("header .bg").width(w);
-        $("header .bg").height(h);
-      });
-      $(window).trigger('resize');
-    });
-  </script>
 @endsection

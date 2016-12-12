@@ -7,7 +7,7 @@
           <h4 class="modal-title">申請入學</h4>
         </div>
         <div class="modal-body">
-
+          <div class="alert alert-danger hide" role="alert">error</div>
           <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">選擇學系</label>
             <div class="col-sm-10">
@@ -26,21 +26,41 @@
           <div class="form-group">
             <label for="inputAlbum" class="col-sm-2 control-label">相簿網址</label>
             <div class="col-sm-10">
-              <input type="text" name="album_url" class="form-control" id="inputAlbum" placeholder="請填寫 FB粉絲團相簿網址">
+              <input
+                id="inputAlbum"
+                type="text"
+                name="album_url"
+                class="form-control"
+                placeholder="請填寫 FB粉絲團相簿網址"
+                pattern="http(s)?:\/\/www\.facebook\.com\/\S+(album_id=\d+){1}"
+                title="請填入FB粉絲團相簿網址"
+                required />
             </div>
           </div>
 
           <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">申請單位</label>
             <div class="col-sm-10">
-              <input type="text" name="page_user" class="form-control" id="inputName" placeholder="請填寫 店名/聯絡人">
+              <input
+                id="inputName"
+                type="text"
+                name="page_user"
+                class="form-control"
+                placeholder="請填寫 店名/聯絡人"
+                required />
             </div>
           </div>
 
           <div class="form-group">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" name="page_email" class="form-control" id="inputEmail" placeholder="your@email.com">
+              <input
+                id="inputEmail"
+                type="email"
+                name="page_email"
+                class="form-control"
+                placeholder="your@email.com"
+                required />
             </div>
           </div>
 

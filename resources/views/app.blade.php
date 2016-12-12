@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="fb:app_id" content="{{env('FACEBOOK_APP_ID')}}" />
       	<meta property="og:type" content="website" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         @yield('meta')
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -25,6 +26,7 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body id="page-top">
+      @include('partials.apply')
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -76,6 +78,25 @@
         <script src="/js/vendor.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.0/jquery.vide.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $(window).on("resize", function(event) {
+              const wR = 1 / 16 * 9;
+              const hR = 1 / 9 * 16;
+              var w = $(window).width();
+              var h = $("header").height();
+              if(w > 1150){
+                h = w * wR;
+              }else{
+                w = h * hR;
+              }
+              $("header .bg").width(w);
+              $("header .bg").height(h);
+            });
+            $(window).trigger('resize');
+          });
+        </script>
+        @include('partials.apply-js')
         @yield('js')
     </body>
 </html>
