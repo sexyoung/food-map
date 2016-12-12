@@ -147,11 +147,11 @@
                           <div class="col-md-4">
                               <div class="feature-item">
                                   <i class="icon beef-noodles"></i>
-                                  <h3>牛肉學院</h3>
+                                  <h3>牛肉麵學院</h3>
                                   <p class="text-muted">
                                     所有美味集結在一碗，札實、肥美、飽滿三種享受一次滿足。
                                   </p>
-                                  <a href="{{url("beef-noodles")}}" class="btn btn-success">參觀牛肉學院</a>
+                                  <a href="{{url("beef-noodles")}}" class="btn btn-success">參觀牛肉麵學院</a>
                               </div>
                           </div>
                       </div>
