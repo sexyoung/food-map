@@ -64,7 +64,7 @@
             </div>
           </div>
 
-          <div class="form-group preview">
+          <div class="form-group preview hide">
             <label for="inputEmail" class="col-sm-2 control-label"></label>
             <div class="col-sm-10">
               <div class="img-responsive"></div>

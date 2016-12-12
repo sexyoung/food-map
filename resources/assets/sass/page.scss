@@ -1,12 +1,31 @@
 section.block{
   .department{
     margin-top: 100px;
-    .img{
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    .carousel{
       height: 350px;
       border-radius: 5px;
+      overflow: hidden;
+      .img{
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        .apply-hint{
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+          color: #bbb;
+          font-size: 12px;
+          background-color: rgba(#000, .7);
+          a{
+            color: white;
+          }
+        }
+      }
     }
     h2{
       font-size: 35px;

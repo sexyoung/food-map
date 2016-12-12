@@ -49,7 +49,14 @@
       @foreach ($departments as $key => $department)
         <div class="row department" id="{{$key}}">
           <div class="col-sm-6 text-right">
-            <div class="img" data-src="/images/{{$key}}.jpg"></div>
+            <div class="carousel">
+              <div class="img" data-src="/images/{{$key}}.jpg">
+                <div class="apply-hint">
+                  想刊登照片? 請按
+                  <a href="#" class="apply">申請入學</a>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-sm-6 text-left">
             <h2>{{$department['name']}}系</h2>
@@ -66,4 +73,29 @@
       @endforeach
     </div>
   </section>
+@endsection
+
+@section('js')
+  <script type="text/javascript">
+    $(document).ready(function() {
+      @foreach ($departments as $key => $department)
+        $.get('get-photos/{{$key}}')
+         .done(function(res){
+           $(".modal-body .alert").addClass("hide");
+           console.warn(res);
+         });
+      @endforeach
+
+      $("a.apply").on("click", function(event) {
+        event.preventDefault();
+
+        $(".modal select").val($(this).closest(".department").attr("id"))
+
+        $('#applyModal').modal({
+          backdrop: 'static'
+        });
+
+      })
+    });
+  </script>
 @endsection

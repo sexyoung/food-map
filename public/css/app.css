@@ -6195,12 +6195,28 @@ body {
 
 section.block .department {
   margin-top: 100px; }
-  section.block .department .img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  section.block .department .carousel {
     height: 350px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    overflow: hidden; }
+    section.block .department .carousel .img {
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative; }
+      section.block .department .carousel .img .apply-hint {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        color: #bbb;
+        font-size: 12px;
+        background-color: rgba(0, 0, 0, 0.7); }
+        section.block .department .carousel .img .apply-hint a {
+          color: white; }
   section.block .department h2 {
     font-size: 35px; }
   section.block .department .dl-horizontal {

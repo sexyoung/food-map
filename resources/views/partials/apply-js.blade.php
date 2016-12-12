@@ -4,10 +4,6 @@
     let pIndex = -1;
     let previewPhotos = [];
 
-    $('#applyModal').modal({
-      backdrop: 'static'
-    });
-
     $.ajaxSetup({
        beforeSend: function(){
          $(".modal-body .alert")
@@ -38,10 +34,12 @@
               .removeClass("hide alert-warning")
               .addClass("alert-danger");
             previewPhotos = [];
+            $(".form-group.preview").addClass("hide");
             return;
           }
           pIndex = -1;
           previewPhotos = photos;
+          $(".form-group.preview").removeClass("hide");
 
         });
       }

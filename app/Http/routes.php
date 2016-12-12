@@ -23,6 +23,9 @@ Route::get('thick-soup',      "MainController@thick_soup");
 Route::get('staple',          "MainController@staple");
 Route::get('pearl',           "MainController@pearl");
 
-Route::post('apply-for',      "ApiController@applyFor");
 Route::get('glt',             "ApiController@glt");
-Route::get('album-list/{albumID?}',      "ApiController@albumList");
+Route::post('apply-for',      "ApiController@applyFor");
+Route::get('get-photos/{type?}',      "ApiController@getPhotos");
+Route::get('album-list/{albumID?}', function($albumID){
+  return albumList($albumID);
+});

@@ -73,14 +73,11 @@ class ApiController extends Controller
       ];
     }
 
-    public function albumList($albumID)
+    public function getPhotos($type = "")
     {
-      $response = $this->fb->get("$albumID/photos?fields=images");
-      $albumsEdge = ($response->getGraphEdge());
-      foreach ($albumsEdge as $photo) {
-        $photos[] = $photo->asArray()['images'][0]['source'];
-      }
-      return $photos;
+      return PageAlbum::type($type)
+              ->confirmed()
+              ->get();
     }
 
 }
