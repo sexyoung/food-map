@@ -57,7 +57,7 @@ class ApiController extends Controller
       $page_name = $response->getGraphAlbum()->getFrom()->getName();
       $response = $this->fb->get("$page_id?fields=location");
       $page_location = $response->getGraphPage()->getLocation();
-      $location = $page_location->getZip().
+      $location = $page_location->getZip(). " ".
                   $page_location->getCountry().
                   $page_location->getCity().
                   $page_location->getStreet();

@@ -50,12 +50,14 @@
         <div class="row department" id="{{$key}}">
           <div class="col-sm-6 text-right">
             <div class="carousel">
-              <div class="img" data-src="/images/{{$key}}.jpg">
+
+              <div class="img active" data-src="/images/{{$key}}.jpg">
                 <div class="apply-hint">
                   想刊登照片? 請按
                   <a href="#" class="apply">申請入學</a>
                 </div>
               </div>
+
             </div>
           </div>
           <div class="col-sm-6 text-left">
@@ -80,9 +82,36 @@
     $(document).ready(function() {
       @foreach ($departments as $key => $department)
         $.get('get-photos/{{$key}}')
-         .done(function(res){
+         .done(function(pages){
            $(".modal-body .alert").addClass("hide");
-           console.warn(res);
+           $("#{{$key}} .carousel").append(pages.map(function(page) {
+             return $("<div>", {
+               class: "img",
+               html: $("<div>", {
+                 class: "apply-hint",
+                 html: page.page_name + "︱<a target='_blank' class='fb' href='https://facebook.com/"+page.page_id+"'>粉絲頁</a>︱<a target='_blank' class='map' href='https://www.google.com.tw/maps/place/"+page.location+"'>地圖</a>"
+               }),
+               style: "background-image: url("+page.photo+")"
+             });
+           }));
+
+           if(pages.length > 0){
+             let index = {};
+             index["{{$key}}"] = -1;
+             setInterval(function () {
+               // now mouse location dom
+               const carousel = $(':hover').last().closest(".carousel");
+               if(carousel.length > 0){
+                 if(carousel.closest(".department").attr("id") !== "{{$key}}"){
+                    $("#{{$key}} .carousel .img").removeClass("active");
+                    $("#{{$key}} .carousel .img:eq("+ (++index["{{$key}}"] % pages.length + 1) +")").addClass("active");
+                 }
+               }else{
+                  $("#{{$key}} .carousel .img").removeClass("active");
+                  $("#{{$key}} .carousel .img:eq("+ (++index["{{$key}}"] % pages.length + 1) +")").addClass("active");
+               }
+             }, 3000);
+           }
          });
       @endforeach
 
