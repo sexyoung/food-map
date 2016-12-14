@@ -10,7 +10,7 @@
 
 @section('content')
 
-  @include('menu', [
+  @include('partials.menu', [
     "list" => [
       "intro" => ["name" => "大學介紹"],
       "features" => ["name" => "探索學院"]
@@ -147,11 +147,11 @@
                           <div class="col-md-4">
                               <div class="feature-item">
                                   <i class="icon beef-noodles"></i>
-                                  <h3>牛肉學院</h3>
+                                  <h3>牛肉麵學院</h3>
                                   <p class="text-muted">
                                     所有美味集結在一碗，札實、肥美、飽滿三種享受一次滿足。
                                   </p>
-                                  <a href="{{url("beef-noodles")}}" class="btn btn-success">參觀牛肉學院</a>
+                                  <a href="{{url("beef-noodles")}}" class="btn btn-success">參觀牛肉麵學院</a>
                               </div>
                           </div>
                       </div>
@@ -192,25 +192,4 @@
           </div>
   </section>
 
-@endsection
-
-@section('js')
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(window).on("resize", function(event) {
-        const wR = 1 / 16 * 9;
-        const hR = 1 / 9 * 16;
-        var w = $(window).width();
-        var h = $("header").height();
-        if(w > 1150){
-          h = w * wR;
-        }else{
-          w = h * hR;
-        }
-        $("header .bg").width(w);
-        $("header .bg").height(h);
-      });
-      $(window).trigger('resize');
-    });
-  </script>
 @endsection
