@@ -131,9 +131,9 @@
      }
 
      function fb_login(){
-         FB.login(statusChangeCallback, {
-             scope: 'email'
-         });
+       FB.login(statusChangeCallback, {
+         scope: 'email'
+       });
      }
 
      $(".btn-fb").on('click', fb_login);

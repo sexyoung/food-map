@@ -11,14 +11,24 @@
 |
 */
 
-Route::get('/', "MainController@index");
+Route::get('/',               "MainController@index");
 
-Route::get('rice',    "MainController@rice");
-Route::get('tofu',    "MainController@tofu");
-Route::get('chicken', "MainController@chicken");
-Route::get('vermicelli', "MainController@vermicelli");
-Route::get('oysters', "MainController@oysters");
+Route::get('rice',            "MainController@rice");
+Route::get('tofu',            "MainController@tofu");
+Route::get('chicken',         "MainController@chicken");
+Route::get('vermicelli',      "MainController@vermicelli");
+Route::get('oysters',         "MainController@oysters");
 Route::get('beef-noodles',    "MainController@beef_noodles");
-Route::get('thick-soup',   "MainController@thick_soup");
-Route::get('staple',  "MainController@staple");
-Route::get('pearl',   "MainController@pearl");
+Route::get('thick-soup',      "MainController@thick_soup");
+Route::get('staple',          "MainController@staple");
+Route::get('pearl',           "MainController@pearl");
+
+Route::get('glt',             "ApiController@glt");
+Route::post('apply-for',      "ApiController@applyFor");
+Route::get('get-photos/{type?}',      "ApiController@getPhotos");
+Route::get('album-list/{albumID?}', function($albumID){
+  return albumList($albumID);
+});
+
+Route::get('admin/{key?}',     "AdminController@index");
+Route::post('admin-confirm',   "AdminController@adminConfirm");

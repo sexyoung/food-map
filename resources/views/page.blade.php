@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-  @include('menu', [
+  @include('partials.menu', [
     "list" => $departments
   ])
   <header class="{{$college}}">
@@ -49,7 +49,16 @@
       @foreach ($departments as $key => $department)
         <div class="row department" id="{{$key}}">
           <div class="col-sm-6 text-right">
-            <div class="img" data-src="/images/{{$key}}.jpg"></div>
+            <div class="carousel">
+
+              <div class="img active" data-src="/images/{{$key}}.jpg">
+                <div class="apply-hint">
+                  想刊登照片? 請按
+                  <a href="#" class="apply">申請入學</a>
+                </div>
+              </div>
+
+            </div>
           </div>
           <div class="col-sm-6 text-left">
             <h2>{{$department['name']}}系</h2>
@@ -71,20 +80,57 @@
 @section('js')
   <script type="text/javascript">
     $(document).ready(function() {
-      $(window).on("resize", function(event) {
-        const wR = 1 / 16 * 9;
-        const hR = 1 / 9 * 16;
-        var w = $(window).width();
-        var h = $("header").height();
-        if(w > 1150){
-          h = w * wR;
-        }else{
-          w = h * hR;
-        }
-        $("header .bg").width(w);
-        $("header .bg").height(h);
-      });
-      $(window).trigger('resize');
+      @foreach ($departments as $key => $department)
+        $.get('get-photos/{{$key}}')
+         .done(function(pages){
+           $(".modal-body .alert").addClass("hide");
+           $("#{{$key}} .carousel").append(pages.map(function(page) {
+             return $("<div>", {
+               class: "img",
+               html: $("<div>", {
+                 class: "apply-hint",
+                 html: page.page_name +
+                     "︱<a target='_blank' class='fb' href='https://facebook.com/"+page.page_id+"'>粉絲頁</a>"+
+                     "︱<a target='_blank' class='map' href='http://maps.google.com?q="+page.location+"'>地圖</a>"
+               }),
+               style: "background-image: url("+page.photo+")"
+             }).append($("<a>", {
+               class: "apply-to",
+               html: "我也要刊登照片",
+               href: "#"
+             }));
+           }));
+
+           if(pages.length > 0){
+             let index = {};
+             index["{{$key}}"] = -1;
+             setInterval(function () {
+               // now mouse location dom
+               const carousel = $(':hover').last().closest(".carousel");
+               if(carousel.length > 0){
+                 if(carousel.closest(".department").attr("id") !== "{{$key}}"){
+                    $("#{{$key}} .carousel .img").removeClass("active");
+                    $("#{{$key}} .carousel .img:eq("+ (++index["{{$key}}"] % pages.length + 1) +")").addClass("active");
+                 }
+               }else{
+                  $("#{{$key}} .carousel .img").removeClass("active");
+                  $("#{{$key}} .carousel .img:eq("+ (++index["{{$key}}"] % pages.length + 1) +")").addClass("active");
+               }
+             }, 3000);
+           }
+         });
+      @endforeach
+
+      $(".block").on("click", "a.apply, a.apply-to", function(event) {
+        event.preventDefault();
+
+        $(".modal select").val($(this).closest(".department").attr("id"))
+
+        $('#applyModal').modal({
+          backdrop: 'static'
+        });
+
+      })
     });
   </script>
 @endsection
