@@ -29,3 +29,6 @@ Route::get('get-photos/{type?}',      "ApiController@getPhotos");
 Route::get('album-list/{albumID?}', function($albumID){
   return albumList($albumID);
 });
+
+Route::get('admin/{key?}',     "AdminController@index");
+Route::post('admin-confirm',   "AdminController@adminConfirm");

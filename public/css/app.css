@@ -6208,6 +6208,15 @@ section.block .department {
       display: none; }
       section.block .department .carousel .img.active {
         display: block; }
+      section.block .department .carousel .img .apply-to {
+        font-size: 12px;
+        padding: 10px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border-radius: 3px; }
       section.block .department .carousel .img .apply-hint {
         position: absolute;
         left: 0;

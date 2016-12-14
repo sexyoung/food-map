@@ -89,10 +89,16 @@
                class: "img",
                html: $("<div>", {
                  class: "apply-hint",
-                 html: page.page_name + "︱<a target='_blank' class='fb' href='https://facebook.com/"+page.page_id+"'>粉絲頁</a>︱<a target='_blank' class='map' href='https://www.google.com.tw/maps/place/"+page.location+"'>地圖</a>"
+                 html: page.page_name +
+                     "︱<a target='_blank' class='fb' href='https://facebook.com/"+page.page_id+"'>粉絲頁</a>"+
+                     "︱<a target='_blank' class='map' href='http://maps.google.com?q="+page.location+"'>地圖</a>"
                }),
                style: "background-image: url("+page.photo+")"
-             });
+             }).append($("<a>", {
+               class: "apply-to",
+               html: "我也要刊登照片",
+               href: "#"
+             }));
            }));
 
            if(pages.length > 0){
@@ -115,7 +121,7 @@
          });
       @endforeach
 
-      $("a.apply").on("click", function(event) {
+      $(".block").on("click", "a.apply, a.apply-to", function(event) {
         event.preventDefault();
 
         $(".modal select").val($(this).closest(".department").attr("id"))
